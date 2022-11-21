@@ -209,6 +209,7 @@
 "preferences.blocked-users" = "Blocked Users";
 "preferences.edge-to-edge-view" = "Edge to edge view";
 "preferences.media" = "Media";
+"preferences.show-labels-in-tab-bar" = "Show labels in tab bar (requires restart)";
 "preferences.media.avatars" = "Avatars";
 "preferences.media.avatars.animate" = "Animate avatars";
 "preferences.media.avatars.animate.everywhere" = "Everywhere";
