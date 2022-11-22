@@ -60,7 +60,7 @@ private extension NewStatusButtonView {
         button.addAction(touchEndAction, for: .touchCancel)
 
         button.setImage(
-            UIImage(systemName: "pencil",
+            UIImage(systemName: "plus",
                     withConfiguration: UIImage.SymbolConfiguration(pointSize: .newStatusButtonDimension / 2)),
             for: .normal)
         vibrancyView.contentView.addSubview(button)
