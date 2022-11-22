@@ -5,7 +5,7 @@ import ViewModels
 
 final class TableViewDataSource: UITableViewDiffableDataSource<CollectionSection.Identifier, CollectionItem> {
     private let updateQueue =
-        DispatchQueue(label: "com.metabolist.metatext.collection-data-source.update-queue")
+        DispatchQueue(label: "com.rocodromo.metatext.collection-data-source.update-queue")
     private let viewModel: CollectionViewModel
 
     init(tableView: UITableView, viewModel: CollectionViewModel) {

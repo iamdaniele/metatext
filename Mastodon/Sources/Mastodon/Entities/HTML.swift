@@ -53,7 +53,7 @@ private final class HTMLParser: NSObject {
     private var attributesStack = [[String: String]]()
     private var currentLink: Link?
     private var links = Set<Link>()
-    private static let containerTag = "com.metabolist.metatext.container-tag"
+    private static let containerTag = "com.rocodromo.metatext.container-tag"
     private static let openingContainerTag = "<\(containerTag)>"
     private static let closingContainerTag = "</\(containerTag)>"
 

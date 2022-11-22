@@ -21,7 +21,7 @@ final class AutocompleteDataSource: UICollectionViewDiffableDataSource<Autocompl
     @Published private var emojiPickerViewModel: EmojiPickerViewModel
 
     private let updateQueue =
-        DispatchQueue(label: "com.metabolist.metatext.autocomplete-data-source.update-queue")
+        DispatchQueue(label: "com.rocodromo.metatext.autocomplete-data-source.update-queue")
     private var cancellables = Set<AnyCancellable>()
 
     init(collectionView: UICollectionView,

@@ -6,7 +6,7 @@ final class XMLUnescaper: NSObject {
     private let rawString: String
     private let parser: XMLParser
     private var unescaped = ""
-    private static let containerTag = "com.metabolist.metatext.container-tag"
+    private static let containerTag = "com.rocodromo.metatext.container-tag"
     private static let openingContainerTag = "<\(containerTag)>"
     private static let closingContainerTag = "</\(containerTag)>"
 

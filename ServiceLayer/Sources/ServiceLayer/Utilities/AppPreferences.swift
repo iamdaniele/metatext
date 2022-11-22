@@ -93,7 +93,7 @@ public extension AppPreferences {
                 return value
             }
 
-            return .favorites
+            return .likes
         }
         set { self[.displayFavoritesAs] = newValue.rawValue }
     }
@@ -190,9 +190,9 @@ public extension AppPreferences {
         get { self[.showReblogAndFavoriteCounts] ?? false }
         set { self[.showReblogAndFavoriteCounts] = newValue }
     }
-    
+
     var edgeToEdgeView: Bool {
-        get { self[.edgeToEdgeView] ?? false }
+        get { self[.edgeToEdgeView] ?? true }
         set { self[.edgeToEdgeView] = newValue }
     }
 
@@ -227,7 +227,7 @@ public extension AppPreferences {
     }
 
     var showLabelsInTabBar: Bool {
-        get { self[.showLabelsInTabBar] ?? true }
+        get { self[.showLabelsInTabBar] ?? false }
         set { self[.showLabelsInTabBar] = newValue }
     }
 }

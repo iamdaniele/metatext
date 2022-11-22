@@ -154,7 +154,7 @@ extension AttachmentsView {
 private extension AttachmentsView {
     // swiftlint:disable:next function_body_length
     func initialSetup() {
-        let isEdgeToEdge = identityContext?.appPreferences.edgeToEdgeView ?? false
+        let isEdgeToEdge = identityContext?.appPreferences.edgeToEdgeView ?? true
         backgroundColor = .clear
         layoutMargins = .zero
         clipsToBounds = true

@@ -25,7 +25,7 @@ public struct Filter: Codable, Hashable, Identifiable {
 public extension Filter {
     typealias Id = String
 
-    static let newFilterId: Id = "com.metabolist.metatext.new-filter-id"
+    static let newFilterId: Id = "com.rocodromo.metatext.new-filter-id"
     static let new = Self(id: newFilterId,
                           phrase: "",
                           context: [],

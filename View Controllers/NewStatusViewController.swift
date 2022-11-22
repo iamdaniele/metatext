@@ -99,7 +99,7 @@ final class NewStatusViewController: UIViewController {
 }
 
 extension NewStatusViewController {
-    static let newStatusPostedNotification = Notification.Name("com.metabolist.metatext.new-status-posted-notification")
+    static let newStatusPostedNotification = Notification.Name("com.rocodromo.metatext.new-status-posted-notification")
 }
 
 extension NewStatusViewController: PHPickerViewControllerDelegate {

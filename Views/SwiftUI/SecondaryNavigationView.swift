@@ -36,9 +36,9 @@ struct SecondaryNavigationView: View {
                         viewModel.navigateToAccountSettings(instanceURI: instanceURI)
                     } label: {
                         Label {
-                            Text("secondary-navigation.account-settings").foregroundColor(.primary)
+                            Text("secondary-navigation.instance-settings").foregroundColor(.primary)
                         } icon: {
-                            Image(systemName: "person.crop.square.filled.and.at.rectangle")
+                            Image(systemName: "server.rack")
                         }
                     }
                 }
@@ -89,6 +89,12 @@ struct SecondaryNavigationView: View {
                         .environmentObject(rootViewModel)) {
                     Label("secondary-navigation.preferences", systemImage: "gear")
                 }
+                NavigationLink(
+                    destination: AccountSettingsView(viewModel: .init(identityContext: viewModel.identityContext))
+                        .environmentObject(rootViewModel)) {
+                            Label("secondary-navigation.account-settings",
+                                  systemImage: "person.crop.square.filled.and.at.rectangle")
+                        }
                 NavigationLink(
                     destination: AboutView(viewModel: viewModel)
                         .environmentObject(rootViewModel)) {

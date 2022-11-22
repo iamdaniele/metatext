@@ -83,7 +83,7 @@ public extension RootViewModel {
 
 private extension RootViewModel {
     static let identityChangeNotificationUserInfoKey =
-        "com.metabolist.metatext.identity-change-notification-user-info-key"
+        "com.rocodromo.metatext.identity-change-notification-user-info-key"
     static let removeIdentityChangeNotificationAfter = DispatchTimeInterval.seconds(10)
 
     // swiftlint:disable:next function_body_length

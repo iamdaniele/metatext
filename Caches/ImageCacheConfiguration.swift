@@ -38,7 +38,7 @@ private extension ImageCacheConfiguration {
         forSecurityApplicationGroupIdentifier: AppEnvironment.appGroup)?
         .appendingPathComponent("Library")
         .appendingPathComponent("Caches")
-    static let imageCacheDirectoryURL = cachesDirectoryURL?.appendingPathComponent("com.metabolist.metatext.images")
+    static let imageCacheDirectoryURL = cachesDirectoryURL?.appendingPathComponent("com.rocodromo.metatext.images")
     static let legacyImageCacheDirectoryURL =
         cachesDirectoryURL?.appendingPathComponent("com.onevcat.Kingfisher.ImageCache.Images")
 }

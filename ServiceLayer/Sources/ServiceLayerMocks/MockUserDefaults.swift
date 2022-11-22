@@ -17,5 +17,5 @@ public final class MockUserDefaults: UserDefaults {
 }
 
 private extension MockUserDefaults {
-    private static let suiteName = "com.metabolist.metatext.mock-user-defaults"
+    private static let suiteName = "com.rocodromo.metatext.mock-user-defaults"
 }

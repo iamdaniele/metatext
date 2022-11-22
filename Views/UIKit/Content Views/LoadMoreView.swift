@@ -29,7 +29,7 @@ final class LoadMoreView: UIView {
 
 extension LoadMoreView {
     static let accessibilityCustomAction =
-        Notification.Name("com.metabolist.metatext.load-more-view.accessibility-custom-action")
+        Notification.Name("com.rocodromo.metatext.load-more-view.accessibility-custom-action")
 
     static var estimatedHeight: CGFloat {
         .defaultSpacing * 2 + UIFont.preferredFont(forTextStyle: .title2).lineHeight

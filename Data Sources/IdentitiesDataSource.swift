@@ -16,7 +16,7 @@ enum IdentitiesItem: Hashable {
 
 final class IdentitiesDataSource: UITableViewDiffableDataSource<IdentitiesSection, IdentitiesItem> {
     private let updateQueue =
-        DispatchQueue(label: "com.metabolist.metatext.identities-data-source.update-queue")
+        DispatchQueue(label: "com.rocodromo.metatext.identities-data-source.update-queue")
     private var cancellables = Set<AnyCancellable>()
 
     init(tableView: UITableView,

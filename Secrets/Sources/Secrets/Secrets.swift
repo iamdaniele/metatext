@@ -216,7 +216,7 @@ public extension Secrets {
 }
 
 private extension Secrets {
-    static let keychainServiceName = "com.metabolist.metatext"
+    static let keychainServiceName = "com.rocodromo.metatext"
     static let databaseKeyLength = 48
 
     private static func set(_ data: SecretsStorable, forAccount account: String, keychain: Keychain.Type) throws {

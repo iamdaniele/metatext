@@ -7,7 +7,7 @@ import ViewModels
 
 final class ExploreDataSource: UICollectionViewDiffableDataSource<ExploreViewModel.Section, ExploreViewModel.Item> {
     private let updateQueue =
-        DispatchQueue(label: "com.metabolist.metatext.explore-data-source.update-queue")
+        DispatchQueue(label: "com.rocodromo.metatext.explore-data-source.update-queue")
     private weak var collectionView: UICollectionView?
     private var cancellables = Set<AnyCancellable>()
 

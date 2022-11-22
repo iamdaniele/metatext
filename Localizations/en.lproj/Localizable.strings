@@ -161,6 +161,7 @@
 "registration.password-confirmation-mismatch" = "Password and password confirmation do not match";
 "secondary-navigation.about" = "About This App";
 "secondary-navigation.account-settings" = "Account Settings";
+"secondary-navigation.instance-settings" = "Instance Settings";
 "secondary-navigation.accounts" = "Accounts";
 "secondary-navigation.edit-profile" = "Edit Profile";
 "secondary-navigation.lists" = "Lists";
@@ -199,6 +200,7 @@
 "pending.pending-confirmation" = "Your account is pending confirmation";
 "post" = "Post";
 "preferences" = "Preferences";
+"account-settings" = "Account settings";
 "preferences.app" = "App Preferences";
 "preferences.app-icon" = "App Icon";
 "preferences.app.color-scheme" = "Appearance";
