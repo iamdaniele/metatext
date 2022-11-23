@@ -183,6 +183,7 @@
 "load-more.below.accessibility.toot" = "Load from toot below";
 "main-navigation.announcements" = "Announcements";
 "main-navigation.timelines" = "Timelines";
+"main-navigation.bookmarks" = "Bookmarks";
 "main-navigation.explore" = "Explore";
 "main-navigation.notifications" = "Notifications";
 "main-navigation.conversations" = "Messages";

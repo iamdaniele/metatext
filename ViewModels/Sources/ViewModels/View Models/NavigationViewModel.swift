@@ -41,7 +41,8 @@ public final class NavigationViewModel: ObservableObject {
 public extension NavigationViewModel {
     enum Tab: Int, CaseIterable {
         case timelines
-        case explore
+        case profile
+        case bookmarks
         case notifications
         case messages
     }
@@ -50,7 +51,7 @@ public extension NavigationViewModel {
         if identityContext.identity.authenticated {
             return Tab.allCases
         } else {
-            return [.timelines, .explore]
+            return [.timelines]
         }
     }
 

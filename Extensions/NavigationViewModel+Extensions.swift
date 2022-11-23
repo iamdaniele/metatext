@@ -9,25 +9,33 @@ extension NavigationViewModel.Tab {
         switch self {
         case .timelines:
             return NSLocalizedString("main-navigation.timelines", comment: "")
-        case .explore:
-            return NSLocalizedString("main-navigation.explore", comment: "")
         case .notifications:
             return NSLocalizedString("main-navigation.notifications", comment: "")
         case .messages:
             return NSLocalizedString("main-navigation.conversations", comment: "")
+        case .profile:
+            return NSLocalizedString("main-navigation.profile", comment: "")
+        case .bookmarks:
+            return NSLocalizedString("main-navigation.bookmarks", comment: "")
         }
     }
 
-    var systemImageName: String {
+    var imageName: UIImage {
         switch self {
-        case .timelines: return "newspaper"
-        case .explore: return "magnifyingglass"
-        case .notifications: return "bell"
-        case .messages: return "envelope"
+        case .timelines:
+            return UIImage(systemName: "newspaper")!
+        case .notifications:
+            return UIImage(systemName: "bell")!
+        case .messages:
+            return UIImage(systemName: "envelope")!
+        case .profile:
+            return UIImage(systemName: "person")!
+        case .bookmarks:
+            return UIImage(systemName: "bookmark")!
         }
     }
 
     var tabBarItem: UITabBarItem {
-        UITabBarItem(title: title, image: UIImage(systemName: systemImageName), selectedImage: nil)
+        UITabBarItem(title: nil, image: imageName, selectedImage: nil)
     }
 }

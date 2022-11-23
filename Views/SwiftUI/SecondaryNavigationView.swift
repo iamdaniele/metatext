@@ -42,6 +42,14 @@ struct SecondaryNavigationView: View {
                         }
                     }
                 }
+
+                NavigationLink(
+                    destination: TableView {
+                        viewModel.announcementsViewModel()
+                    }.environmentObject(rootViewModel)) {
+                        Label("main-navigation.announcements", systemImage: "megaphone")
+                    }
+
                 NavigationLink(
                     destination: IdentitiesView { .init(identityContext: viewModel.identityContext) }
                         .environmentObject(rootViewModel)) {

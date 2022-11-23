@@ -6,7 +6,7 @@ import ViewModels
 
 final class TimelinesViewController: UIPageViewController {
     private let segmentedControl = UISegmentedControl()
-    private let announcementsButton = UIBarButtonItem()
+    private let exploreButton = UIBarButtonItem()
     private let timelineViewControllers: [TableViewController]
     private let viewModel: NavigationViewModel
     private let rootViewModel: RootViewModel
@@ -42,35 +42,17 @@ final class TimelinesViewController: UIPageViewController {
             image: UIImage(systemName: "newspaper"),
             selectedImage: nil)
 
-        let announcementsAction = UIAction(
-            title: NSLocalizedString("main-navigation.announcements", comment: ""),
-            image: UIImage(systemName: "megaphone")) { [weak self] _ in
-            guard let self = self else { return }
-
-            let announcementsViewController = TableViewController(viewModel: viewModel.announcementsViewModel(),
+        let exploreAction = UIAction(
+            title: NSLocalizedString("main-navigation.explore", comment: ""),
+            image: UIImage(systemName: "magnifyingglass")) { [weak self] _ in
+                guard let self = self else { return }
+                let exploreViewController = ExploreViewController(viewModel: viewModel.exploreViewModel(),
                                                                   rootViewModel: rootViewModel)
-
-            self.navigationController?.pushViewController(announcementsViewController, animated: true)
-        }
-
-        announcementsButton.primaryAction = announcementsAction
-
-        viewModel.$announcementCount
-            .sink { [weak self] in
-                if $0.unread > 0 {
-                    announcementsAction.image = UIImage(systemName: "\($0.unread).circle.fill")
-                        ?? UIImage(systemName: "megaphone.fill")
-                    self?.announcementsButton.primaryAction = announcementsAction
-                    self?.announcementsButton.tintColor = .systemRed
-                } else {
-                    announcementsAction.image = UIImage(systemName: "megaphone")
-                    self?.announcementsButton.primaryAction = announcementsAction
-                    self?.announcementsButton.tintColor = nil
-                }
-
-                self?.navigationItem.rightBarButtonItem = $0.total > 0 ? self?.announcementsButton : nil
+                self.navigationController?.pushViewController(exploreViewController, animated: true)
             }
-            .store(in: &cancellables)
+
+        exploreButton.primaryAction = exploreAction
+        navigationItem.rightBarButtonItem = exploreButton
     }
 
     @available(*, unavailable)

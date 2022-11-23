@@ -6,7 +6,15 @@ import Foundation
 import Mastodon
 import MastodonAPI
 
-public struct ProfileService {
+public struct ProfileService: Equatable {
+    public static func == (lhs: ProfileService, rhs: ProfileService) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+    public static func ~= (lhs: ProfileService, rhs: ProfileService) -> Bool {
+        return lhs.id == rhs.id
+    }
+
     public let profilePublisher: AnyPublisher<Profile, Error>
 
     private let id: Account.Id

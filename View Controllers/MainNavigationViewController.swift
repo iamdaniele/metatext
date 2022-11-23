@@ -116,8 +116,40 @@ private extension MainNavigationViewController {
 
         if viewModel.identityContext.identity.authenticated && !pending {
             tabBar.isHidden = false
-            controllers.append(ExploreViewController(viewModel: viewModel.exploreViewModel(),
-                                                     rootViewModel: rootViewModel))
+
+            let profileController: ProfileViewController
+            if let account = viewModel.identityContext.identity.account {
+                let profileService = viewModel.identityContext.service.navigationService.profileService(id: account.id)
+                let profileViewModel = ProfileViewModel(profileService: profileService,
+                                                        identityContext: viewModel.identityContext)
+
+                profileController = ProfileViewController(viewModel: profileViewModel,
+                                                          rootViewModel: rootViewModel,
+                                                          identityContext: viewModel.identityContext,
+                                                          parentNavigationController: nil)
+                profileController.tabBarItem = NavigationViewModel.Tab.profile.tabBarItem
+                profileController.navigationItem.title = NavigationViewModel.Tab.profile.title
+
+                if !viewModel.identityContext.appPreferences.showLabelsInTabBar {
+                    profileController.navigationItem.title = nil
+                }
+
+                controllers.append(profileController)
+            }
+
+            let bookmarksViewContoller = TableViewController(
+                viewModel: viewModel.viewModel(timeline: .bookmarks),
+                rootViewModel: rootViewModel)
+
+            bookmarksViewContoller.tabBarItem = NavigationViewModel.Tab.bookmarks.tabBarItem
+            bookmarksViewContoller.navigationItem.title = nil
+
+            if !viewModel.identityContext.appPreferences.showLabelsInTabBar {
+                bookmarksViewContoller.navigationItem.title = nil
+            }
+
+            controllers.append(bookmarksViewContoller)
+
             controllers.append(NotificationsViewController(viewModel: viewModel, rootViewModel: rootViewModel))
 
             let conversationsViewController = TableViewController(

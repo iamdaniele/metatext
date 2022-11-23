@@ -8,7 +8,7 @@ public final class IdentityContext: ObservableObject {
     @Published private(set) public var identity: Identity
     @Published private(set) public var authenticatedOtherIdentities = [Identity]()
     @Published public var appPreferences: AppPreferences
-    let service: IdentityService
+    @Published private(set) public var service: IdentityService
 
     init(identity: Identity,
          publisher: AnyPublisher<Identity, Never>,
