@@ -518,6 +518,11 @@ private extension StatusView {
         inReplyToView.isHidden = !viewModel.configuration.isReplyInContext
         hasReplyFollowingView.isHidden = !viewModel.configuration.hasReplyFollowing
 
+        if viewModel.identityContext.appPreferences.edgeToEdgeView {
+            inReplyToView.isHidden = true
+            hasReplyFollowingView.isHidden = true
+        }
+
         if viewModel.isReblog {
             let attributedTitle = "status.reblogged-by-%@".localizedBolding(
                 displayName: viewModel.rebloggedByDisplayName,

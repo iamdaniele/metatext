@@ -49,7 +49,7 @@ final class AttachmentsView: UIView {
 
             if viewModel.attachmentViewModels.count == 1,
                let aspectRatio = viewModel.attachmentViewModels.first?.attachment.aspectRatio {
-                newAspectRatio = max(CGFloat(aspectRatio), 16 / 9)
+                newAspectRatio = CGFloat(aspectRatio)
             } else {
                 newAspectRatio = 16 / 9
             }
@@ -105,7 +105,7 @@ final class AttachmentsView: UIView {
 
         initialSetup()
     }
-    
+
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -120,7 +120,7 @@ extension AttachmentsView {
         let height: CGFloat
         if status.displayStatus.mediaAttachments.count == 1,
            let aspectRatio = status.mediaAttachments.first?.aspectRatio {
-            height = width / max(CGFloat(aspectRatio), 16 / 9)
+            height = width / CGFloat(aspectRatio)
         } else {
             height = width / (16 / 9)
         }

@@ -134,7 +134,8 @@ private extension RootViewModel {
                         .zip(self.registerForRemoteNotifications())
                         .filter { identityContext.identity.lastRegisteredDeviceToken != $1 }
                         .map { ($1, identityContext.identity.pushSubscriptionAlerts) }
-                        .flatMap(identityContext.service.createPushSubscription(deviceToken:alerts:))
+                        .flatMap(
+                            identityContext.service.createPushSubscription(deviceToken:alerts:))
                         .sink { _ in } receiveValue: { _ in }
                         .store(in: &self.cancellables)
                 }
